@@ -2,109 +2,142 @@
 <html lang="en">
 
 <head>
-   <meta content="charset=UTF-8" />
-   <title>XHTML Template Example - Intro ITWS</title>
-
-
-
-   <style type="text/css">
-      html {
-         width: 100%;
-      }
-
+   <meta charset="UTF-8">
+   <title>Sample Resume</title>
+   <!-- Internal CSS styles are placed inside the <style> tag in the <head> section -->
+   <style>
+      /* This sets the background color and font for the whole page */
       body {
-         width: 95%;
-         font-family: Arial, Helvetica, sans-serif;
-         overflow: hidden;
+         font-family: Arial, sans-serif;
+         background-color: #f4f4f4;
+         margin: 0;
+         padding: 0;
       }
 
+      /* This styles the main container for the resume */
+      .resume-container {
+         background-color: #fff;
+         max-width: 700px;
+         margin: 30px auto;
+         padding: 30px;
+         border-radius: 8px;
+         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* This styles the name at the top */
       h1 {
-         text-align: center;
-         margin: 0;
-         padding: 0;
-         font-variant: small-caps;
-
+         color: #333;
+         margin-bottom: 5px;
       }
 
+      /* This styles the section headings */
       h2 {
-         float: left;
-         clear: left;
-         width: 150px;
-         margin: 20px 0 0 0;
-         padding: 0;
-         font-size: 1.2em;
+         color: #00539C;
+         border-bottom: 1px solid #ddd;
+         padding-bottom: 5px;
+         margin-top: 30px;
       }
 
-      .leader {
-         color: blue;
+      /* This styles the contact info */
+      .contact-info {
+         color: #555;
+         font-size: 1em;
+         margin-bottom: 20px;
       }
 
-
-      #contactInfo {
-         border-top: 2px solid #333;
-         border-bottom: 2px solid #333;
-         padding: 4px 0 4px 0;
-         margin: 0;
-         text-align: center;
-         white-space: nowrap;
+      /* This styles the list of skills */
+      ul {
+         list-style-type: disc;
+         margin-left: 20px;
       }
 
-      #contactInfo li {
-         display: inline;
-         list-style: none;
-         margin: 0 0.25em 0 0.25em;
+      /* This styles each job or education entry */
+      .item {
+         margin-bottom: 15px;
       }
 
-      #nameWrapper {
-         width: 100%;
-         float: left;
-         clear: both;
+      /* Flexbox for items with dates on the right */
+      .item-flex {
+         display: flex;
+         align-items: flex-start;
+         margin-bottom: 15px;
+         justify-content: space-between;
       }
 
-      #nm {
-         width: 30%;
+      .item-content {
+         flex: 1;
       }
 
-      #ci {
-         width: 70%;
-         float: right;
-
+      .item-date {
+         min-width: 120px;
+         color: #888;
+         font-size: 0.98em;
+         margin-left: 18px;
+         text-align: left;
+         flex-shrink: 0;
       }
    </style>
 </head>
 
 <body>
-   <h1><a href="http://rpi.edu">Pamela Evans</a></h1>
-   <ul id="contactInfo">
-      <li>145 Tahquitz Canyon</li>
-      <li>Palm Springs, California 92262</li>
-      <li>760-555-1212</li>
-      <li>support@resumeedge.com</li>
-   </ul>
-   <h2>PROFILE</h2>
-   <ul id="jobs">
-      <li>TA, RPI</li>
-      <li>Another job</li>
-   </ul>
+   <!-- Main container for the resume content -->
+   <div class="resume-container">
+      <!-- Name and contact info -->
+      <h1>Elijah Dalelio</h1>
+      <div class="contact-info">
+         Email: elijahdalelio@gmail.com | Phone: (973) 896-2485 | Troy, NY
+      </div>
 
-   <div>
-      <h2>EDUCATION</h2>
+      <!-- Objective section -->
+      <h2>Objective</h2>
+      <p>
+         Motivated student seeking an internship in AI, Machine Learning, or cyber security.
+      </p>
+
+      <!-- Education section -->
+      <h2>Education</h2>
+      <div class="item-flex">
+         <div class="item-content">
+            <strong>RPI</strong><br>
+            Sophomore
+            GPA: 3.61
+         </div>
+         <div class="item-date">2021 - 2025</div>
+      </div>
+
+      <!-- Skills section -->
+      <h2>Skills</h2>
       <ul>
-         <li></li>
+         <li>HTML5 &amp; CSS3</li>
+         <li>Python, C++, &amp; C</li>
+         <li>SolidWorks, MATLAB, Simulink</li>
+         <li>LATEX, &amp; Microsoft Office</li>
+      </ul>
+
+      <!-- Experience section -->
+      <h2>Experience</h2>
+      <div class="item-flex">
+         <div class="item-content">
+            <strong>
+            Production Intern: Analytical Science and Technologies Group</strong><br>
+
+            <ul>
+               <li>Analyzed and optimized large datasets of design specifications to streamline gas analytics systems from concept to production.</li>
+               <li>Applied statistical and computational methods to evaluate performance trade-offs, improving production throughput and accuracy.</li>
+               <li>Collaborated cross-functionally with engineers and manufacturing teams to refine workflows, translating technical findings to improve production alignment and design clarity.</li>
+            </ul>
+
+         </div>
+         <div class="item-date">Spring/Summer 2024</div>
+      </div>
+
+      <!-- Activities section -->
+      <h2>Activities</h2>
+      <ul>
+         <li>President, Delta Tau Delta Fraternity</li>
+         <li>Member, Club Rugby</li>
       </ul>
    </div>
-
-   <div id="nameWrapper">
-      <div id="nm">
-         <p>Fname</p>
-         <p>Lname</p>
-      </div>
-      <div id="ci">
-         contact info
-      </div>
-   </div>
-
-
 </body>
 
 </html>
