@@ -1,0 +1,49 @@
+a {
+   text-decoration: none; /* removes underline */
+}
+
+.image-button {
+   background-image: url('shipthing.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-color: transparent;
+   width: 200px;
+   height: 200px;
+   border: none;
+   cursor: pointer;
+   color: rgb(255, 254, 254);
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+   font-weight: bold;
+   font-size: 18px;
+}
+
+
+body {
+   background-image: url('finalbackground.png');
+   background-size: cover; /* Covers entire viewport */
+   background-repeat: no-repeat;
+   background-attachment: fixed; /* Stays in place when scrolling */
+   background-position: center;
+}
+
+
+nav {
+   background-color: rgba(0, 0, 0, 0.8);
+   padding: 15px;
+}
+
+nav ul {
+   list-style: none;
+   padding: 0;
+}
+
+nav a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+nav a:hover {
+   color: #00ffff;
+}
