@@ -1,8 +1,6 @@
-a {
-   text-decoration: none; /* removes underline */
-}
-
-
+﻿
+/* general background style mostly 
+making the gradient background*/
 body {
   background:
     radial-gradient(900px at 15% 25%, rgba(140, 95, 255, 0.45), transparent 58%),
@@ -14,29 +12,47 @@ body {
   font-family: "Poppins", "Segoe UI", sans-serif;
   position: relative;
   overflow-x: hidden;
-}
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(transparent 0 6px, rgba(255, 255, 255, 0.02) 6px 7px);
-  mix-blend-mode: screen;
-  opacity: 0.28; /* lowered to keep things lighter */
+  display: flex;
+  flex-direction: column;
 }
 
+/* main and section below make the bubble textbox
+ look nice consistently in diff sizes */ 
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+  box-sizing: border-box;
+}
 
+section {
+  background: rgba(18, 24, 40, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+}
+/* makes the words spaced nicely */ 
+h1, h2 { margin: 0 0 12px; letter-spacing: 0.3px; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.5rem; color: #cdd5ff; }
 
+/*below all nav makes the buttons look nice
+ and act as actual buttons */
 nav {
   background: transparent;
-  padding: 18px 32px;
+  padding: 18px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+/* makes my name in the header bold*/ 
 nav .brand { font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
 
+/* makes my buttons on the same line spaced nicely */
 nav ul.nav-links {
   display: flex;
   gap: 14px;
@@ -45,7 +61,8 @@ nav ul.nav-links {
 }
 
 nav ul.nav-links li { list-style: none; }
-
+/* makes the actual buttons, kinda got excited and asked 
+codex to help me here but I understand how it works*/ 
 nav a.nav-btn {
   display: inline-block;
   padding: 10px 18px;
@@ -58,9 +75,24 @@ nav a.nav-btn {
   transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
   box-shadow: 0 6px 16px rgba(0,0,0,0.35), 0 0 18px rgba(130, 90, 255, 0.45);
 }
+
+/* shows you hovering over a button - very cool*/ 
 nav a.nav-btn:hover {
   transform: translateY(-1px);
   border-color: rgba(255, 0, 204, 0.55);
   box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 24px rgba(255, 0, 204, 0.55);
 }
 nav a.nav-btn:active { transform: translateY(0); }
+
+/* keeps footer consistent throughout pages */ 
+footer {
+  padding: 16px 28px 24px;
+  text-align: center;
+  color: #d7ddff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(12, 16, 28, 0.2) 0%, rgba(12, 16, 28, 0.55) 100%);
+  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  margin-top: auto;
+}
+footer p { margin: 0; font-size: 0.95rem; letter-spacing: 0.2px; }
