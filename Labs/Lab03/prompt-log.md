@@ -1,0 +1,30 @@
+# Session Prompt & Action Log
+
+1. **“go through my website: notice that its using a purple gradient - instead make it a black and grey gradient. take the bubbles where my text is and sharpen them to be just a letter paper- but all gray. give it a sleek design, keeping the buttons functionally the same(popping out of the page with the highlight feature, but in a similar syle where they look sleek and professional. my biggest change i want you to make is to b=make this professional. if you have questions or my instructions are too broad and ambiguous, ask them before committing changes. I'll give you feedback once youre done”** — Swapped to black/gray gradient, flattened/gray sections, kept button pop in grayscale.
+2. **“i asked for a grey black background gradient”** — Darkened background tones toward gray/black.
+3. **“stop. completely change the background behind the bubble to the only image in my images folder within this folder were in rn”** — Set body background to `images/network-mesh-wire-digital-technology-background_1017-27428.avif` with overlay.
+4. **“I dont want anything but that image as my background”** — Removed overlay so only the image shows.
+5. **“okay none of those are buttons like the header. i want each of them to have a box like the overall page does, and each to be a button link around the same size they are now, but seperate entiries on the background not one full entity”** — Projects page converted to individual floating cards with hover pop.
+6. **“thats better! i want each button floating though, not on the backgound of the projects thing but on the image background.”** — Made projects section transparent so cards float on the page background.
+7. **“next i want my header to be more professional. the footer is very nice right now. can you make the header look visually like the footer?”** — Added dark gradient, border, shadow to header.
+8. **“next make the buttons for Home through contract not be rounded edges and be right up against each other. the animation is great though, do you think you could just make that button pop out a bit in a similar fashion?”** — Squared nav buttons, removed gaps, strengthened hover pop.
+9. **“the background is kinda glaring. do you think you can lower its overall brightness to match the theme of color we have going?”** — Added dark overlay to dim the background image.
+10. **“less dark”** — Lightened the overlay.
+11. **“alright. now for the home page - make it not a rounded edges bubble like it is. I want more of a sleek modern professional look like this but dark and with our current theme.”** — Rebuilt hero to flat, two-column sleek layout with CTAs.
+12. **“I want to have a spot for my headshot and the about me on a full screen thing once you scroll down - make it like a light sky blue. the top should be for my name, picture,  and a qucik who am I half senance then the”** — Added full-screen light-blue profile band and positioned headshot.
+13. **“I like that change a lot up top and below. the about me bubble up top sucks though. I want all of the top to be what you have on the left, with a spot for my picture in the center and a bit bigger”** — Removed right bubble, centered larger headshot and hero copy.
+14. **“put the elijach.heic into my profile photo on the home page up top”** — Pointed hero/profile images to your headshot (with fallbacks).
+15. **“gear shot i like”** — Swapped profile-section image to a gear-shot placeholder background.
+16. **“my experience section is lackluster. i want the same sleek boxes that i have for buttons but larger and as a list. A bunch of rectangles that span left to right but leave a little space to show the background on the sides. the left side of these cards should have space for me to put images of the logo of the experience, for instance, the ge logo, dtd logo, and astg logo. the other side will take up the majority of the rectangle and will be for the job title, description, skills i learned, and the term i was there for.”** — Built floating experience cards with logo slot + details.
+17. **“i love it, but just like with the projects, I want each experience floating on the background. also, I dont want rounded edges on these boxes, and the image should take up top to bottom to left on the left side of the cards”** — Removed section container, squared edges, full-height logo column.
+18. **“i already did u just need to add them. look at my images they have all that u need”** — Wired actual logo files (`astg_logo.jpg`, `dtd_logo.jpg`, `GEVernova.jpg`) into experience cards.
+19. **“make the top bar stay at the top even when you scroll”** — Made header sticky.
+20. **“make the home through contact buttoms span the top to bottom of the top bar.”** — Nav links now fill bar height.
+21. **“ok love it, now make them look like just part of the top par and not buttons or boxes until you hover over them”** — Flattened nav buttons; hover only shows subtle style.
+22. **“its great, but the contrast is a little jarring. can you make it just a slight change so that its barely noticable that they move when you hover (mostly color changes necessary)”** — Softened hover color/lift.
+23. **“better idea - no bright flash at all just keep the rest as it is but dont have the white outline at first”** — Removed bright outline; very subtle hover overlay.
+24. **“take inspiration from the experience cards to create the labs better. I want it basically the same but with two cards that are taller on each row. give a place for photos too but instead of the full left side, just a small square in the top left with a little buffer from the edges”** — Gave projects page a tall-card layout with top thumbs (later reverted per next prompt).
+25. **“okay undo what you did, I wanted the project page where the labs are stored to look like the ss i sent you with the same 2x2 layout we already have”** — Reverted Lab 1 change and restyled projects to a 2x layout with top thumbnails.
+
+This log lists the exact prompts and the immediate actions taken.***
+    default-search              
