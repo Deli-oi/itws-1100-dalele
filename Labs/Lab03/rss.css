@@ -1,0 +1,6 @@
+channel { display: block; font-family: Arial, sans-serif; margin: 30px; }
+title { display: block; font-size: 1.5em; font-weight: bold; color: #c41230; margin-bottom: 8px; }
+item { display: block; border: 1px solid #ccc; padding: 12px; margin-bottom: 15px; border-radius: 4px; }
+description { display: block; color: #333; margin: 5px 0; }
+link { display: block; color: #0066cc; }
+pubDate { display: block; font-size: 0.8em; color: #888; margin-top: 5px; }

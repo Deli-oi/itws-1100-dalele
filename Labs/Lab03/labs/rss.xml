@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="../rss.css"?>
+<rss version="2.0">
+<channel>
+  <title>Lab Feed</title>
+  <description>A feed of my Intro ITWS labs</description>
+  <link>http://dalelerpi.eastus.cloudapp.azure.com/</link>
+  <lastBuildDate>Mon, 23 Feb 2026 00:00:00 +0000</lastBuildDate>
+  <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+
+  <item>
+    <title>Lab 1 - VM Setup</title>
+    <description>Setting up my virtual machine and development environment</description>
+    <link>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab1.html</link>
+    <guid>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab1.html</guid>
+    <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+  </item>
+
+  <item>
+    <title>Lab 2 - HTML Resume</title>
+    <description>Built an HTML resume with CSS styling</description>
+    <link>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab2.html</link>
+    <guid>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab2.html</guid>
+    <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+  </item>
+
+  <item>
+    <title>Lab 3 - Personal Website</title>
+    <description>Designed and built a full personal website with multiple pages</description>
+    <link>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab3.html</link>
+    <guid>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab3.html</guid>
+    <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+  </item>
+
+  <item>
+    <title>Lab 4 - RSS Feed</title>
+    <description>Created an RSS XML feed for my personal website linking to all my labs</description>
+    <link>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab4.html</link>
+    <guid>http://dalelerpi.eastus.cloudapp.azure.com/labs/lab4.html</guid>
+    <pubDate>Mon, 23 Feb 2026 00:00:00 +0000</pubDate>
+  </item>
+
+</channel>
+</rss>
