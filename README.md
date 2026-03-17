@@ -1,7 +1,9 @@
 Eli Dalelio
 ITWS1100
-Lab01
-Lab05 - JavaScript form validation, nickname button, comment field behavior
 
-Password: crowns68
-Repository name: itws-i100-dalele
+Repository: itws-i100-dalele
+
+## Labs
+
+- Lab01 - initial setup, got familiar with GitHub and Azure
+- Lab05 - JavaScript: form validation, comment field behavior, nickname button, focus styling
