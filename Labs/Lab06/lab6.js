@@ -15,7 +15,6 @@ $(document).ready(function () {
 
 
 
-
    // Problem 1 (10 pts): When the user clicks on the <h1>,
    //change the 'your name' to your own name (ie Joe Smith)
    //change the text to be your name in small caps
@@ -48,22 +47,24 @@ $(document).ready(function () {
    // Problem 3 (10 pts): When a normal list item is clicked, make it turn red using addClass.
    //            When a red list item is clicked change it back (you need to look up the appropriate jQuery method to do this)
    // (Note that there already is a css style named ".red" in lab6.css)
-   
-   
+
+   $('#labList').on('click', 'li', function () {
+      if ($(this).hasClass('red')) {
+         $(this).removeClass('red');
+      } else {
+         $(this).addClass('red');
+      }
+   });
 
    // Problem 4 (10 pts): When a user clicks on the "Add a list item" button, add a new list item to the end of the list.
 
+   $('#AddListItem').click(function () {
+      $('#labList').append('<li>New list item</li>');
+   });
 
-   // Problem 5 (10 pts) - what happens when you click on the new li?  Why? (Explain in your readme file)
-   //   ie if it works as after #3 above, why? if it doesn't, why not?  How would you fix it?
-   //   If it doesm't work - fix it.
-   //   (Note that you need to look up the appropriate jQuery method - discussed in class - to do this)
-
-
-
-
-   // Problem 5 (10 pts): lookup another jquery method and use this code on the "Toggle Text"
-   // link to show/hide the text:
+   $('#toggleText').click(function () {
+      $('#showHideBlock p').toggle();
+   });
 
    // Problems: 50 pts
    // Validity: 10 pts
@@ -77,5 +78,5 @@ $(document).ready(function () {
      link it from your projects page,
      and a link to your project page and repo in the readme file.
      Submit as normal to LMS
- */
+*/
 });
