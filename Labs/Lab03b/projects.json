@@ -1,0 +1,40 @@
+{
+  "projects": [
+    {
+      "title": "Lab 1: Hello World & Setup",
+      "description": "Set up Azure hosting and GitHub. Deployed a Hello World page and explored web server basics.",
+      "link": "labs/lab1.html",
+      "thumb": "thumb-lab1"
+    },
+    {
+      "title": "Lab 2: HTML Resume",
+      "description": "Built a structured HTML resume using semantic tags, lists, and CSS styling with flexbox layout.",
+      "link": "labs/lab2.html",
+      "thumb": "thumb-lab2"
+    },
+    {
+      "title": "Lab 3: Portfolio Website",
+      "description": "Designed a multi-page portfolio site with a navbar, projects page, and custom CSS gradients.",
+      "link": "labs/lab3.html",
+      "thumb": "thumb-lab3"
+    },
+    {
+      "title": "Lab 5: JavaScript Basics",
+      "description": "Introduction to JavaScript with interactive DOM manipulation, event listeners, and dynamic content.",
+      "link": "../Lab05/lab5.html",
+      "thumb": "thumb-lab5"
+    },
+    {
+      "title": "Lab 6: jQuery",
+      "description": "jQuery event handling, animations, and dynamic list manipulation using the jQuery library.",
+      "link": "../Lab06/lab6.html",
+      "thumb": "thumb-lab6"
+    },
+    {
+      "title": "Lab 8: JSON & AJAX",
+      "description": "Used fetch() to load a JSON file and dynamically built this projects page without hardcoded HTML.",
+      "link": "projects.html",
+      "thumb": "thumb-lab8"
+    }
+  ]
+}

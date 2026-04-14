@@ -1,10 +1,36 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elijah Dalelio - Projects</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery UI CSS from CDN (required for accordion / tooltip widgets) -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.min.css">
+
+  <!-- Small override so jQueryUI tooltip blends with the dark theme -->
+  <style>
+    .ui-tooltip {
+      background: #1c1f25;
+      color: #e7e9ee;
+      border: 1px solid #4d515c;
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      font-size: 0.88rem;
+    }
+    .ui-accordion .ui-accordion-header {
+      background: linear-gradient(135deg, #20232b 0%, #171920 100%);
+      color: #e7e9ee;
+      border: 1px solid #2a2e35;
+      border-radius: 0;
+    }
+    .ui-accordion .ui-accordion-content {
+      background: #14161c;
+      color: #c5c9d3;
+      border: 1px solid #2a2e35;
+    }
+    #info-accordion { margin-bottom: 24px; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -22,42 +48,22 @@
   <main>
     <section class="projects">
       <h1>Projects</h1>
-      <div class="projects-grid">
-        <a class="project-card-link" href="labs/lab1.html">
-          <div class="project-thumb thumb-lab1" aria-label="Lab 1 preview"></div>
-          <div class="project-body">
-            <h3>Lab 1</h3>
-            <p>Intro HTML page and personal bio; focused on semantic structure.</p>
-          </div>
-        </a>
-        <a class="project-card-link" href="labs/lab2.html">
-          <div class="project-thumb thumb-lab2" aria-label="Lab 2 preview"></div>
-          <div class="project-body">
-            <h3>Lab 2</h3>
-            <p>Styling and layout practice with CSS, experimenting with typography.</p>
-          </div>
-        </a>
-        <a class="project-card-link" href="labs/lab3.html">
-          <div class="project-thumb thumb-lab3" aria-label="Lab 3 preview"></div>
-          <div class="project-body">
-            <h3>Lab 3</h3>
-            <p>Portfolio redesign with gradients, buttons, and responsive sections.</p>
-          </div>
-        </a>
-        <a class="project-card-link" href="../Lab05/lab5.html">
-          <div class="project-thumb thumb-lab5" aria-label="Lab 5 preview"></div>
-          <div class="project-body">
-            <h3>Lab 5</h3>
-            <p>Introduction to JavaScript with interactive DOM manipulation.</p>
-          </div>
-        </a>
-        <a class="project-card-link" href="../Lab06/lab6.html">
-          <div class="project-thumb thumb-lab6" aria-label="Lab 6 preview"></div>
-          <div class="project-body">
-            <h3>Lab 6</h3>
-            <p>jQuery event handling, animations, and dynamic list manipulation.</p>
-          </div>
-        </a>
+
+      <!-- jQueryUI accordion panel with info about this page (Lab 8 enhancement) -->
+      <div id="info-accordion">
+        <h3>About this page</h3>
+        <div>
+          <p>
+            This projects list is loaded dynamically from <strong>projects.json</strong> using
+            the <code>fetch()</code> API and jQuery. No project cards are hardcoded in the HTML —
+            adding a new entry to the JSON file instantly updates this page.
+          </p>
+        </div>
+      </div>
+
+      <!-- Empty container — project cards are injected here by projects.js -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- dynamic content loaded via AJAX / fetch() in projects.js -->
       </div>
     </section>
   </main>
@@ -65,5 +71,12 @@
   <footer>
     <p>&copy; 2026 Elijah Dalelio. All rights reserved.</p>
   </footer>
+
+  <!-- jQuery from CDN (must come before jQuery UI and projects.js) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- jQuery UI from CDN -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <!-- External JS file that fetches projects.json and builds the page -->
+  <script src="projects.js"></script>
 </body>
 </html>
