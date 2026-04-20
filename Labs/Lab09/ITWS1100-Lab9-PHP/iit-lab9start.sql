@@ -16,3 +16,17 @@ VALUES (1, "Elizabeth", "1998"),
       "2001"
    ),
    (5, "Up in the Air", "2009");
+
+CREATE TABLE 'actors' (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+   `firstNames` varchar(100) NOT NULL,
+   `lastName` varchar(100) NOT NULL,
+   'dob' date DEFAULT NULL,
+   PRIMARY KEY (`actorid`)
+)
+INSERT INTO actors
+VALUES (1, "Cate", "Blanchett", "1969-05-14"),
+   (2, "Scarlett", "Johansson", "1984-11-22"),
+   (3, "George", "Clooney", "1961-05-06"),
+   (4, "Elijah", "Wood", "1981-01-28"),
+   (5, "George", "Clooney", "1961-05-06");
