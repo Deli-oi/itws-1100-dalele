@@ -1,9 +1,11 @@
 <?php
   /* Delete an actor */
-  
+
+  require_once 'includes/config.inc.php';
+
   /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
-  @ $db = new mysqli('localhost', 'root', 'root', 'iit');
+  @ $db = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
   
   if ($db->connect_error) {
     $connectErrors = array(
@@ -18,7 +20,7 @@
       $actorId = (int) $_POST["id"];
       
       // Setup a prepared statement. 
-      $query = "delete from actors where actorid = ?";
+      $query = "DELETE FROM actors WHERE id = ?";
       $statement = $db->prepare($query);
       // bind our variable to the question mark
       $statement->bind_param("i",$actorId);

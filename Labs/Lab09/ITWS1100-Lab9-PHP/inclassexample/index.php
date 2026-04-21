@@ -21,9 +21,11 @@ include('includes/head.inc.php');
 // we'll change the $dbOk flag.
 $dbOk = false;
 
+require_once 'includes/config.inc.php';
+
 /* Create a new database connection object, passing in the host, username,
      password, and database to use. The "@" suppresses errors. */
-@$db = new mysqli('localhost', 'root', 'root', 'iitF23');
+@$db = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 
 if ($db->connect_error) {
    echo '<div class="messages">Could not connect to the database. Error: ';
@@ -41,21 +43,15 @@ $errors = '';
 if ($havePost) {
 
    // Get the output and clean it for output on-screen.
-   // First, let's get the output one param at a time.
    // Could also output escape with htmlentities()
    $firstNames = htmlspecialchars(trim($_POST["firstNames"]));
    $lastName = htmlspecialchars(trim($_POST["lastName"]));
-   $dob = htmlspecialchars(trim($_POST["dob"]));
+   $birthYear = htmlspecialchars(trim($_POST["birth_year"]));
 
-   // special handling for the date of birth
-   $dobTime = strtotime($dob); // parse the date of birth into a Unix timestamp (seconds since Jan 1, 1970)
-   $dateFormat = 'Y-m-d'; // the date format we expect, yyyy-mm-dd
-   // Now convert the $dobTime into a date using the specfied format.
-   // Does the outcome match the input the user supplied?
-   // The right side will evaluate true or false, and this will be assigned to $dobOk
-   $dobOk = date($dateFormat, $dobTime) == $dob;
+   $birthYearInt = (int)$birthYear;
+   $birthYearOk = ($birthYearInt >= 1800 && $birthYearInt <= (int)date('Y'));
 
-   $focusId = ''; // trap the first field that needs updating, better would be to save errors in an array
+   $focusId = ''; // trap the first field that needs updating
 
    if ($firstNames == '') {
       $errors .= '<li>First name may not be blank</li>';
@@ -65,13 +61,13 @@ if ($havePost) {
       $errors .= '<li>Last name may not be blank</li>';
       if ($focusId == '') $focusId = '#lastName';
    }
-   if ($dob == '') {
-      $errors .= '<li>Date of birth may not be blank</li>';
-      if ($focusId == '') $focusId = '#dob';
+   if ($birthYear == '') {
+      $errors .= '<li>Birth year may not be blank</li>';
+      if ($focusId == '') $focusId = '#birth_year';
    }
-   if (!$dobOk) {
-      $errors .= '<li>Enter a valid date in yyyy-mm-dd format</li>';
-      if ($focusId == '') $focusId = '#dob';
+   if (!$birthYearOk) {
+      $errors .= '<li>Enter a valid 4-digit birth year</li>';
+      if ($focusId == '') $focusId = '#birth_year';
    }
 
    if ($errors != '') {
@@ -85,25 +81,23 @@ if ($havePost) {
       echo '</script>';
    } else {
       if ($dbOk) {
-         // Let's trim the input for inserting into mysql
-         // Note that aside from trimming, we'll do no further escaping because we
-         // use prepared statements to put these values in the database.
+         // Trim the input for inserting into mysql.
+         // We use prepared statements so no further escaping is needed.
          $firstNamesForDb = trim($_POST["firstNames"]);
          $lastNameForDb = trim($_POST["lastName"]);
-         $dobForDb = trim($_POST["dob"]);
+         $birthYearForDb = (int)trim($_POST["birth_year"]);
 
-         // Setup a prepared statement. Alternately, we could write an insert statement - but
-         // *only* if we escape our data using addslashes() or (better) mysqli_real_escape_string().
-         $insQuery = "insert into actors (`last_name`,`first_names`,`dob`) values(?,?,?)";
+         // Setup a prepared statement.
+         $insQuery = "INSERT INTO actors (`firstNames`,`lastName`,`birth_year`) VALUES (?,?,?)";
          $statement = $db->prepare($insQuery);
          // bind our variables to the question marks
-         $statement->bind_param("sss", $lastNameForDb, $firstNamesForDb, $dobForDb);
+         $statement->bind_param("ssi", $firstNamesForDb, $lastNameForDb, $birthYearForDb);
          // make it so:
          $statement->execute();
 
          // give the user some feedback
          echo '<div class="messages"><h4>Success: ' . $statement->affected_rows . ' actor added to database.</h4>';
-         echo $firstNames . ' ' . $lastName . ', born ' . $dob . '</div>';
+         echo $firstNames . ' ' . $lastName . ', born ' . $birthYear . '</div>';
 
          // close the prepared statement obj
          $statement->close();
@@ -127,45 +121,40 @@ if ($havePost) {
                                                                      echo $lastName;
                                                                   } ?>" name="lastName" id="lastName" /></div>
 
-         <label class="field" for="dob">Date of Birth:</label>
-         <div class="value"><input type="text" size="10" maxlength="10" value="<?php if ($havePost && $errors != '') {
-                                                                                    echo $dob;
-                                                                                 } ?>" name="dob" id="dob" /> <em>yyyy-mm-dd</em></div>
+         <label class="field" for="birth_year">Birth Year:</label>
+         <div class="value"><input type="text" size="4" maxlength="4" value="<?php if ($havePost && $errors != '') {
+                                                                                    echo $birthYear;
+                                                                                 } ?>" name="birth_year" id="birth_year" /> <em>yyyy</em></div>
 
          <input type="submit" value="save" id="save" name="save" />
       </div>
    </fieldset>
 </form>
 
-<h3>Actors</h3>
+<h3>Actors <a href="export-actors.php" style="font-size:0.7em; font-weight:normal;">[Export CSV (born &ge; 1965)]</a></h3>
 <table id="actorTable">
    <?php
    if ($dbOk) {
 
-      $query = 'select * from actors order by last_name';
+      $query = 'SELECT * FROM actors ORDER BY lastName';
       $result = $db->query($query);
       $numRecords = $result->num_rows;
 
-      echo '<tr><th>Name:</th><th>Date of Birth:</th><th></th></tr>';
+      echo '<tr><th>Name:</th><th>Birth Year:</th><th></th></tr>';
       for ($i = 0; $i < $numRecords; $i++) {
          $record = $result->fetch_assoc();
          if ($i % 2 == 0) {
-            echo "\n" . '<tr id="actor-' . $record['actorid'] . '"><td>';
+            echo "\n" . '<tr id="actor-' . $record['id'] . '"><td>';
          } else {
-            echo "\n" . '<tr class="odd" id="actor-' . $record['actorid'] . '"><td>';
+            echo "\n" . '<tr class="odd" id="actor-' . $record['id'] . '"><td>';
          }
-         echo htmlspecialchars($record['last_name']) . ', ';
-         echo htmlspecialchars($record['first_names']);
+         echo htmlspecialchars($record['lastName']) . ', ';
+         echo htmlspecialchars($record['firstNames']);
          echo '</td><td>';
-         echo htmlspecialchars($record['dob']);
+         echo htmlspecialchars($record['birth_year']);
          echo '</td><td>';
          echo '<img src="resources/delete.png" class="deleteActor" width="16" height="16" alt="delete actor"/>';
          echo '</td></tr>';
-         // Uncomment the following three lines to see the underlying
-         // associative array for each record.
-         // echo '<tr><td colspan="3" style="white-space: pre;">';
-         // print_r($record);
-         // echo '</td></tr>';
       }
 
       $result->free();
