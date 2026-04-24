@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Facts Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <!-- Start screen: player enters name -->
+    <div id="start-screen">
+        <h1>Flower Facts Quiz</h1>
+        <p class="subtitle">Answer 10 random questions about flowers. Your score will be saved to the leaderboard.</p>
+        <form id="start-form">
+            <input type="text" id="player-name" placeholder="Your name" maxlength="50" required>
+            <button type="submit" class="btn-primary">Start Quiz</button>
+        </form>
+    </div>
+
+    <!-- Quiz screen: one question at a time -->
+    <div id="quiz-screen" style="display:none;">
+        <div id="progress">Question <span id="q-num">1</span> of <span id="q-total">10</span></div>
+        <div id="score-display">Score: <span id="score">0</span></div>
+        <div id="question-text"></div>
+        <div id="options"></div>
+    </div>
+
+    <!-- Results screen: final score + leaderboard -->
+    <div id="results-screen" style="display:none;">
+        <h2>Quiz Complete</h2>
+        <p id="final-score"></p>
+        <h3>Top Scores</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+        </table>
+        <button id="play-again" class="btn-primary">Play Again</button>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f4f1ec;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+#app {
+    background: #fff;
+    border-radius: 6px;
+    padding: 40px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: #3d6b4f;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #3d6b4f;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #555;
+    margin: 24px 0 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* ── Start screen ──────────────────────────────────────────────────────────── */
+
+#start-form input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+#start-form input[type="text"]:focus {
+    outline: none;
+    border-color: #3d6b4f;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #3d6b4f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #2f5540;
+}
+
+/* ── Quiz screen ───────────────────────────────────────────────────────────── */
+
+#progress {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+#score-display {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #3d6b4f;
+    margin-bottom: 22px;
+}
+
+#question-text {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    display: block;
+    width: 100%;
+    padding: 11px 16px;
+    margin-bottom: 10px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.97rem;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.12s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: #ececec;
+}
+
+.option-btn:disabled {
+    cursor: default;
+}
+
+.option-btn.correct {
+    background: #d6edd9;
+    border-color: #3d6b4f;
+    color: #1a4228;
+}
+
+.option-btn.wrong {
+    background: #fae0e0;
+    border-color: #b94a4a;
+    color: #7a1e1e;
+}
+
+/* ── Results screen ────────────────────────────────────────────────────────── */
+
+#final-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3d6b4f;
+    margin-bottom: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+th {
+    text-align: left;
+    padding: 8px 12px;
+    background: #f7f7f7;
+    border-bottom: 2px solid #ddd;
+}
+
+td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
