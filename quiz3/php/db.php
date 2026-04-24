@@ -1,6 +1,6 @@
 <?php
 // Database connection — same credentials as lab09
-$db = new mysqli('localhost', 'root', 'root', 'iit');
+$db = new mysqli('localhost', 'phpmyadmin', 'Oftheway13$', 'iit');
 
 if ($db->connect_error) {
     http_response_code(500);
