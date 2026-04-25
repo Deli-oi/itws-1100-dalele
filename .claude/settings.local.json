@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)",
+      "Skill(update-config)",
+      "Bash(powershell.exe *)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File 'C:\\Users\\dalele\\Desktop\\ITWS1100\\iit\\.claude\\log-prompt.ps1'",
+            "statusMessage": "Logging prompt..."
+          }
+        ]
+      }
+    ]
+  }
+}
