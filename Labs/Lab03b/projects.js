@@ -20,7 +20,14 @@ $(document).ready(function () {
             var card = $("<a>").addClass("project-card-link").attr("href", project.link);
             var thumb = $("<div>").addClass("project-thumb " + project.thumb);
             var body = $("<div>").addClass("project-body");
-            var title = $("<h3>").text(project.title);
+
+            // add lock icon if the lab is password protected
+            var titleText = project.secure ? project.title + " 🔒" : project.title;
+            var title = $("<h3>").text(titleText);
+            if (project.secure) {
+               card.attr("title", "Password required");
+            }
+
             var desc = $("<p>").text(project.description);
 
             // put it all together
