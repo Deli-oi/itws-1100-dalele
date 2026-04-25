@@ -4,37 +4,57 @@
       "title": "Lab 1: Hello World & Setup",
       "description": "Set up Azure hosting and GitHub. Deployed a Hello World page and explored web server basics.",
       "link": "labs/lab1.html",
-      "thumb": "thumb-lab1"
+      "thumb": "thumb-lab1",
+      "secure": true
     },
     {
       "title": "Lab 2: HTML Resume",
       "description": "Built a structured HTML resume using semantic tags, lists, and CSS styling with flexbox layout.",
       "link": "labs/lab2.html",
-      "thumb": "thumb-lab2"
+      "thumb": "thumb-lab2",
+      "secure": false
     },
     {
       "title": "Lab 3: Portfolio Website",
       "description": "Designed a multi-page portfolio site with a navbar, projects page, and custom CSS gradients.",
       "link": "labs/lab3.html",
-      "thumb": "thumb-lab3"
+      "thumb": "thumb-lab3",
+      "secure": false
     },
     {
       "title": "Lab 5: JavaScript Basics",
       "description": "Introduction to JavaScript with interactive DOM manipulation, event listeners, and dynamic content.",
       "link": "../Lab05/lab5.html",
-      "thumb": "thumb-lab5"
+      "thumb": "thumb-lab5",
+      "secure": false
     },
     {
       "title": "Lab 6: jQuery",
       "description": "jQuery event handling, animations, and dynamic list manipulation using the jQuery library.",
       "link": "../Lab06/lab6.html",
-      "thumb": "thumb-lab6"
+      "thumb": "thumb-lab6",
+      "secure": false
     },
     {
       "title": "Lab 8: JSON & AJAX",
       "description": "Used fetch() to load a JSON file and dynamically built this projects page without hardcoded HTML.",
       "link": "projects.html",
-      "thumb": "thumb-lab8"
+      "thumb": "thumb-lab8",
+      "secure": false
+    },
+    {
+      "title": "Lab 9: PHP & MySQL",
+      "description": "Built a server-side app with PHP forms and a MySQL database to store and display data.",
+      "link": "../Lab09/",
+      "thumb": "thumb-lab9",
+      "secure": true
+    },
+    {
+      "title": "Lab 10: Production Deployment",
+      "description": "Deployed the full site to a live server with HTTPS, password protection, and auto-deploy from GitHub.",
+      "link": "../Lab10/",
+      "thumb": "thumb-lab10",
+      "secure": false
     }
   ]
 }
